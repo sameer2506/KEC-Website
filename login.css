@@ -1,0 +1,14 @@
+body
+{
+    padding: 0;
+    margin: 0;
+    background-color: #f2fbfd;
+}
+
+#login-square
+{
+    margin-left: 50px;
+    width: 500px;
+    height: 505px;
+    background-color: red;
+}

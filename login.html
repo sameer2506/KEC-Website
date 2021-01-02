@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>Login</title>
+        <script src="jquery.js"></script>
+        <style type="text/css">
+
+            body
+            {
+                background-color: #f2fbfd;
+                margin: 0;
+                padding: 0;
+            }
+
+            #wrapper
+            {
+                background-color:#ffffff;
+                width: 30%;
+                height: 400px;
+                padding: 25px;
+                margin-left: 33%;
+                margin-top: 8%;
+               
+            }
+
+            #successMessage
+            {
+                color: green;
+                font-size: 30px !important;
+                display: none;
+                margin-bottom: 20px;
+                margin-left: 600px;
+            }
+
+            .form-element
+            {
+                margin-bottom: 10px;
+            }
+
+            #submitButton
+            {
+                width: 10px;
+                margin-left: 100px;
+               width: 90px;
+                float: left;
+            }
+
+            #errorMessage
+            {
+                margin-left: 600px;
+                color: red;
+                font-size: 30px !important;
+            }
+
+            label
+            {
+                position: relative;
+                top: 12px;
+                width: 150px;
+                float: left;
+            }
+
+            input
+            {
+                margin-left: 100px;
+                padding: 5px 5px 12px 5px;
+                font-size: 25px;
+                background-color: #D0D3D4;
+                border-radius: 5px;
+                border: 1px solid goldenrod;
+                width: 320px;
+            }
+
+            h2
+            {
+                margin-left: 170PX;
+                color: whitesmoke;
+            }
+
+            a
+            {
+                text-decoration: none;
+            }
+
+            img
+            {
+                margin-left: 25%;
+                width: 50%;
+                height: 20%;
+            }
+
+    </style>
+
+    </head>
+    <body>
+
+        <a href="index.html">Home</a>
+
+        <div id="successMessage">You've done it correctly</div>
+            
+        <div id="errorMessage"></div>
+
+
+        <div id="wrapper">
+            <div id="successMessage">You've done it correctly</div>
+            
+            <div id="errorMessage"></div>
+
+            <img src="images/logo.png">
+
+            <p style="text-align: center;"><h2>Login</h2><br></p>
+
+            <div class="form-element">
+                <input type="txt" name="username" id="username" placeholder="Username">
+            </div>
+
+            <div class="form-element">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+            
+                <input type="submit" id="submitButton">
+                        
+                
+
+        </div>
+
+        <script type="text/javascript">
+
+            $("#submitButton").click(function()
+            {
+                var errorMessage = "";
+                var fieldMissing = "";
+
+                if($("#username").val()=="")
+                    fieldMissing+="<br>Username";
+
+                if($("#password").val()=="")
+                    fieldMissing+="<br>Password";
+                                
+                if(fieldMissing!="")
+                    errorMessage+="<p>The following field(s) are missing</P>" +fieldMissing;
+                                
+                if(errorMessage!="")
+                        $("#errorMessage").html(errorMessage);
+                
+                else
+                {
+                    $("#successMessage").show();
+                    $("#errorMessage").hide();
+                }
+            });
+        </script>
+    </body>
+</html>
